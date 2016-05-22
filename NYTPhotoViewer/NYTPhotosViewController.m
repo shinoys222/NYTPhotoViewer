@@ -371,6 +371,11 @@ static const UIEdgeInsets NYTPhotosViewControllerCloseButtonImageInsets = {3, 0,
         startingView = self.currentPhotoViewController.scalingImageView.imageView;
     }
     
+    if(self.referenceViewForCurrentPhoto.contentMode == UIViewContentModeScaleAspectFill)
+    {
+        startingView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+    
     self.transitionController.startingView = startingView;
     self.transitionController.endingView = self.referenceViewForCurrentPhoto;
 
